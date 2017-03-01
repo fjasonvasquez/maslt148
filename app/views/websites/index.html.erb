@@ -1,0 +1,8 @@
+<h1>Website Items</h1>
+
+<% @website_items.each do |website_item| %>
+	<p><%= website_item.title %></p>
+	<p><%= website_item.subtitle %></p>
+	<p><%= website_item.body %></p>
+	<%= image_tag website_item.thumb_image %>
+<% end %>
