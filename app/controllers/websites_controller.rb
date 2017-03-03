@@ -8,7 +8,7 @@ class WebsitesController < ApplicationController
 	end
 
 	def create
-    @website_item = Website.new(params.require(:website_item).permit(:title, :subtitle, :body))
+    @website_item = Website.new(params.require(:website).permit(:title, :subtitle, :body))
 
     respond_to do |format|
       if @website_item.save
