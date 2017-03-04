@@ -39,4 +39,17 @@ class WebsitesController < ApplicationController
   	@website_item = Website.find(params[:id])
   end
 
+  def destroy
+  	# Perform the lookup
+  	@website_item = Website.find(params[:id])
+
+  	# Destroy/delete the record
+  	@website_item.destroy
+
+  	# Redirect
+    respond_to do |format|
+      format.html { redirect_to websites_url, notice: 'Record was removed.' }
+    end
+  end
+
 end

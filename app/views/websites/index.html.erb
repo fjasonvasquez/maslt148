@@ -8,5 +8,5 @@
 	<p><%= website_item.body %></p>
 	<%= image_tag website_item.thumb_image unless website_item.thumb_image.nil? %>
 	<%= link_to "Edit", edit_website_path(website_item) %>
-
+	<%= link_to 'Delete Website Item', website_path(website_item), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
