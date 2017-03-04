@@ -35,4 +35,8 @@ class WebsitesController < ApplicationController
     end
   end
 
+  def show
+  	@website_item = Website.find(params[:id])
+  end
+
 end
