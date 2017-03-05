@@ -3,7 +3,7 @@
 <%= link_to "Create New Item", new_website_url %>
 
 <% @website_items.each do |website_item| %>
-	<p><%= link_to website_item.title, website_path(website_item) %></p>
+	<p><%= link_to website_item.title, website_show_path(website_item) %></p>
 	<p><%= website_item.subtitle %></p>
 	<p><%= website_item.body %></p>
 	<%= image_tag website_item.thumb_image unless website_item.thumb_image.nil? %>
