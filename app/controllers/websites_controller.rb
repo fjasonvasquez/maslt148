@@ -3,6 +3,10 @@ class WebsitesController < ApplicationController
 		@website_items = Website.all
 	end
 
+  def angular
+    @angular_website_items = Website.angular
+  end
+
 	def new
 		@website_item = Website.new
 	end
