@@ -46,3 +46,11 @@ end
 end
 
 puts "9 website items created"
+
+3.times do |partner|
+	Website.last.partners.create!(
+		name: "Partner #{partner}",
+		)
+end
+
+puts "3 partners created"
