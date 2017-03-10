@@ -16,6 +16,15 @@
     <%= f.text_area :body %>
   </div>
 
+  <ul>
+    <%= f.fields_for :partners do |partner_form| %>
+    <li>
+      <%= partner_form.label :name %>
+      <%= partner_form.text_field :name %>
+    </li>
+    <% end %>
+  </ul>
+
   <div class="actions">
     <%= f.submit %>
   </div>

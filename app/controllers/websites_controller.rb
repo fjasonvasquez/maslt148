@@ -9,10 +9,12 @@ class WebsitesController < ApplicationController
 
 	def new
 		@website_item = Website.new
+    3.times { @website_item.partners.build }
 	end
 
 	def create
-    @website_item = Website.new(params.require(:website).permit(:title, :subtitle, :body))
+    @website_item = Website.new(params.require(:website).permit(:title, :subtitle, :body,
+      partners_attributes: [:name]))
 
     respond_to do |format|
       if @website_item.save

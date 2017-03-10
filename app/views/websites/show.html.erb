@@ -6,4 +6,8 @@
 
 <p><%= @website_item.body %></p>
 
+<h2>Partners Used:</h2>
 
+<% @website_item.partners.each do |p| %>
+<p><%= p.name %></p>
+<% end %>
