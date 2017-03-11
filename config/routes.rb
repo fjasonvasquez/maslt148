@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :websites, except: [:show]
   get 'angular-items', to: 'websites#angular'
   get 'website/:id', to: 'websites#show', as: 'website_show'
