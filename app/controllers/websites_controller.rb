@@ -13,8 +13,7 @@ class WebsitesController < ApplicationController
 	end
 
 	def create
-    @website_item = Website.new(params.require(:website).permit(:title, :subtitle, :body,
-      partners_attributes: [:name]))
+    @website_item = Website.new(website_params)
 
     respond_to do |format|
       if @website_item.save
@@ -33,7 +32,7 @@ class WebsitesController < ApplicationController
   	@website_item = Website.find(params[:id])
 
     respond_to do |format|
-      if @website_item.update(params.require(:website_item).permit(:title, :subtitle, :body))
+      if @website_item.update(websit_params)
         format.html { redirect_to websites_path, notice: 'The record was successfully updated.' }
       else
         format.html { render :edit }
@@ -56,6 +55,16 @@ class WebsitesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to websites_url, notice: 'Record was removed.' }
     end
+  end
+
+  private
+
+  def website_params
+    params.require(:website).permit(:title, 
+                                    :subtitle, 
+                                    :body,
+                                    partners_attributes: [:name]
+                                    )
   end
 
 end
