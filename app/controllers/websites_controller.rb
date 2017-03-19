@@ -34,7 +34,7 @@ class WebsitesController < ApplicationController
   	@website_item = Website.find(params[:id])
 
     respond_to do |format|
-      if @website_item.update(websit_params)
+      if @website_item.update(website_params)
         format.html { redirect_to websites_path, notice: 'The record was successfully updated.' }
       else
         format.html { render :edit }
