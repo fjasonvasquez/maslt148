@@ -1,4 +1,6 @@
 class WebsitesController < ApplicationController
+  layout 'website'
+  
 	def index
 		@website_items = Website.all
 	end
