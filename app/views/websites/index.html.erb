@@ -2,11 +2,4 @@
 
 <%= link_to "Create New Item", new_website_url %>
 
-<% @website_items.each do |website_item| %>
-	<p><%= link_to website_item.title, website_show_path(website_item) %></p>
-	<p><%= website_item.subtitle %></p>
-	<p><%= website_item.body %></p>
-	<%= image_tag website_item.thumb_image unless website_item.thumb_image.nil? %>
-	<%= link_to "Edit", edit_website_path(website_item) %>
-	<%= link_to 'Delete Website Item', website_path(website_item), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+<%= render partial: 'website_item', collection: @website_items %>
