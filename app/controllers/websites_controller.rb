@@ -1,4 +1,5 @@
 class WebsitesController < ApplicationController
+  before_action :set_website_item, only: [:edit, :update, :show, :destroy]
   layout 'website'
   
 	def index
@@ -27,12 +28,9 @@ class WebsitesController < ApplicationController
   end
 
   def edit
-  	@website_item = Website.find(params[:id])
   end
 
   def update
-  	@website_item = Website.find(params[:id])
-
     respond_to do |format|
       if @website_item.update(website_params)
         format.html { redirect_to websites_path, notice: 'The record was successfully updated.' }
@@ -43,12 +41,9 @@ class WebsitesController < ApplicationController
   end
 
   def show
-  	@website_item = Website.find(params[:id])
   end
 
   def destroy
-  	# Perform the lookup
-  	@website_item = Website.find(params[:id])
 
   	# Destroy/delete the record
   	@website_item.destroy
@@ -67,6 +62,10 @@ class WebsitesController < ApplicationController
                                     :body,
                                     partners_attributes: [:name]
                                     )
+  end
+
+  def set_website_item
+    @website_item = Website.find(params[:id])
   end
 
 end
