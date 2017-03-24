@@ -15,4 +15,8 @@ module ApplicationHelper
   		content_tag(:p, greeting, class: "source-greeting")
   	end
   end
+
+  def copyright_generator
+    MaViewTool::Renderer.copyright 'MA', 'All rights reserved.'
+  end
 end
