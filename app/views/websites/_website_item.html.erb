@@ -1,9 +1,6 @@
-	<p><%= link_to website_item.title, website_show_path(website_item) %></p>
-
-	<p><%= website_item.subtitle %></p>
-
-	<p><%= website_item.body %></p>
-	
-	<%= image_tag website_item.thumb_image unless website_item.thumb_image.nil? %>
-	<%= link_to "Edit", edit_website_path(website_item) if logged_in?(:site_admin) %>
-	<%= link_to 'Delete Website Item', website_path(website_item), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
+<div class="card">
+  <%= image_tag website_item.thumb_image unless website_item.thumb_image.nil? %>
+  <p class="card-text">
+  	<span><%= link_to website_item.title, website_show_path(website_item) %></span> <%= website_item.subtitle %>
+  </p>
+</div>

@@ -1,5 +1,7 @@
-<h1>Upcoming Events</h1>
-
-<%= link_to "Create New Item", new_website_url if logged_in?(:site_admin) %>
-
-<%= render partial: 'website_item', collection: @website_items %>
+<div class="album text-muted">
+  <div class="container">
+    <div class="row">
+			<%= render partial: 'website_item', collection: @website_items %>
+		</div>
+	</div>
+</div>
