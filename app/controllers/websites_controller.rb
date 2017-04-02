@@ -4,7 +4,7 @@ class WebsitesController < ApplicationController
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   
 	def index
-		@website_items = Website.all
+		@website_items = Website.by_position
 	end
 
   def angular
