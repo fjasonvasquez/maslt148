@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" data-id="<%= website_item.id %>">
   <%= image_tag website_item.thumb_image unless website_item.thumb_image.nil? %>
   <p class="card-text">
   	<span><%= link_to website_item.title, website_show_path(website_item) %></span> <%= website_item.subtitle %>

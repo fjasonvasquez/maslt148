@@ -7,6 +7,14 @@ class WebsitesController < ApplicationController
 		@website_items = Website.by_position
 	end
 
+  def sort
+    params[:order].each do |key, value|
+      Website.find(value[:id]).update{:position value[:position])
+  end
+
+    render nothing: true
+  end
+
   def angular
     @angular_website_items = Website.angular
   end
