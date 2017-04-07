@@ -8,7 +8,7 @@ set_positions = ->
 	return
 
 ready = ->
-set_positions()
+	set_positions()
 	$('.sortable').sortable()
 	$('.sortable').sortable().bind 'sortupdate', (e, ui) ->
 		updated_order = []
