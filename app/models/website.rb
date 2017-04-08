@@ -6,6 +6,9 @@ class Website < ApplicationRecord
 	include Placeholder
 	validates_presence_of :title, :body, :main_image, :thumb_image
 
+	mount_uploader :thumb_image, WebsiteUploader
+	mount_uploader :main_image, WebsiteUploader
+
 	def self.angular
 		where(subtitle: 'Angular')
 	end

@@ -69,6 +69,8 @@ class WebsitesController < ApplicationController
     params.require(:website).permit(:title, 
                                     :subtitle, 
                                     :body,
+                                    :main_image,
+                                    :thumb_image,
                                     partners_attributes: [:name]
                                     )
   end
