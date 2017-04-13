@@ -1,6 +1,7 @@
 class Website < ApplicationRecord
 	has_many :partners
 	accepts_nested_attributes_for :partners,
+																allow_destroy: true,
 																reject_if: lambda { |attrs| attrs['name'].blank? }
 
 	validates_presence_of :title, :body

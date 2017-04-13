@@ -21,7 +21,6 @@ class WebsitesController < ApplicationController
 
 	def new
 		@website_item = Website.new
-    3.times { @website_item.partners.build }
 	end
 
 	def create
@@ -71,12 +70,11 @@ class WebsitesController < ApplicationController
                                     :body,
                                     :main_image,
                                     :thumb_image,
-                                    partners_attributes: [:name]
+                                    partners_attributes: [:id, :name, :_destroy]
                                     )
   end
 
   def set_website_item
     @website_item = Website.find(params[:id])
   end
-
 end
