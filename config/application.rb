@@ -18,5 +18,6 @@ Bundler.require(*Rails.groups)
 
 module MartineWebsite
   class Application < Rails::Application
+  	config.eager_load_paths << "#{Rails.root}/lib"
   end
 end
