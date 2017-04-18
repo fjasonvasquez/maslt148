@@ -42,6 +42,10 @@ module ApplicationHelper
         url: websites_path,
         title: 'Events'
       },
+      {
+        url: food_news_path,
+        title: 'Food News'
+      },
     ]
   end
 
