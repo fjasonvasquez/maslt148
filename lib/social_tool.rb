@@ -1,6 +1,6 @@
 module SocialTool
 	def self.twitter_search
-		client = Twitter::Streaming::Client.new do |config|
+		client = Twitter::REST::Client.new do |config|
 		  config.consumer_key        = ENV.fetch("TWITTER_CONSUMER_KEY")
 		  config.consumer_secret     = ENV.fetch("TWITTER_CONSUMER_SECRET")
 		  config.access_token        = ENV.fetch("TWITTER_ACCESS_TOKEN")
@@ -12,8 +12,3 @@ module SocialTool
 		end
 	end
 end
-
-#TWITTER_CONSUMER_KEY=
-#TWITTER_CONSUMER_SECRET=
-#TWITTER_ACCESS_TOKEN=
-#TWITTER_ACCESS_SECRET=
