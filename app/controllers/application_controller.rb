@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 	before_action :set_copyright
 
 	def set_copyright
-		@copyright = MAViewTool::Renderer.copyright 'CHARTEducation', 'All rights reserved'
+		@copyright = MAViewTool::Renderer.copyright 'CHARTEducation LLC', 'All rights reserved'
 	end
 end
 
