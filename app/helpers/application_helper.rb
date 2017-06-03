@@ -33,7 +33,7 @@ module ApplicationHelper
       },
       {
         url: contact_path,
-        title: 'Contact'
+        title: 'Travel Planning'
       },
       {
         url: blogs_path,
